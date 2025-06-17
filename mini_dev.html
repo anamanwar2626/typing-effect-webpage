@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Effect</title>
+  <style>
+    body {
+      background: #111;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .typing {
+      border-right: 2px solid #0f0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="typing" id="text"></div>
+
+  <script>
+    const text = "Welcome to my mini dev drop ✨";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 100);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
